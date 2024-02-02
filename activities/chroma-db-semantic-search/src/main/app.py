@@ -2,6 +2,7 @@ import os
 import csv
 import pprint
 import chromadb
+import pandas
 
 from typing import List, Tuple
 from csv import reader
@@ -33,7 +34,6 @@ def get_embeddings_from_csv(
       as document text.
     - Generate a unique ID for each document (e.g., using the line number).
     """
-    # Implement your code here
     pass
 
 
