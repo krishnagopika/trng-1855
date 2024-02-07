@@ -1,0 +1,14 @@
+{
+    "name": null,
+    "input_variables": [
+        "language",
+        "text"
+    ],
+    "input_types": {},
+    "output_parser": null,
+    "partial_variables": {},
+    "template": "generate code for {text} in {language}",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}

@@ -1,0 +1,11 @@
+_type: prompt
+input_types: {}
+input_variables:
+- language
+- text
+name: null
+output_parser: null
+partial_variables: {}
+template: generate code for {text} in {language}
+template_format: f-string
+validate_template: false
