@@ -1,0 +1,5 @@
+langchain
+huggingface_hub
+transformers
+jinja2
+langchain-community
