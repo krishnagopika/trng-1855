@@ -1,0 +1,2 @@
+from pinecone import Pinecone
+

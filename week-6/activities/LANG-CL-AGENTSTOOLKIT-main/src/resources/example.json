@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "feature.prototype.example",
+    "version": "version not set"
+  },
+  "paths": {
+    "/ops/features": {
+      "get": {
+        "summary": "GET /ops/features",
+        "operationId": "ListFeatures",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/featureListFeaturesResponse"
+            }
+          }
+        },
+        "tags": [
+          "Generic"
+        ]
+      }
+    },
+    "/ops/features/{uuid}": {
+      "put": {
+        "summary": "PUT /ops/features/:uuid",
+        "operationId": "UpdateFeature",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/featureUpdateFeatureResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protobufStruct"
+            }
+          }
+        ],
+        "tags": [
+          "Generic"
+        ]
+      }
+    }
+  }
+}
