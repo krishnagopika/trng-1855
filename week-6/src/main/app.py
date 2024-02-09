@@ -2,7 +2,7 @@ import streamlit as st
 from sales_agent import get_agent
 
 st.title('BrightSpeed')
-st.subheader('Sales Agent')
+ 
 
 if 'chat' not in st.session_state:
   st.session_state['chat'] = [{
@@ -17,11 +17,16 @@ if user_input:
     "role": "user"
   })
   agent = get_agent()
-  agent_response = agent.invoke({user_input})
-  st.session_state['chat'].append({
-    "content": agent_response['output'],
-    "role": "ai"
-  })
+  try:
+    agent_response = agent.invoke({user_input})
+    st.session_state['chat'].append({
+      "content": agent_response['output'],
+      "role": "ai"})
+  except :
+    st.session_state['chat'].append({
+      "content": "Sorry, I'm not sure I can help with that.",
+      "role":"ai"})
+      
 if st.session_state['chat']:
   for i in range(0, len(st.session_state['chat'])):
     user_message = st.session_state['chat'][i]
