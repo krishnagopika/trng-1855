@@ -17,6 +17,7 @@ embeddings_model = HuggingFaceEmbeddings(
 text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=10)
 documents = text_splitter.split_documents(pages)
 
+# specify your Pineocne Index name
 index= "trng-index"
     
 Pinecone.from_documents(documents, embeddings_model, index_name=index)
