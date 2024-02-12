@@ -1,7 +1,5 @@
 # trng-1855
 
-## Week 5
-
 1. [LLM Introduction](./week-5/day1.ipynb)
 2. [Hugging Face](./week-5/day1.ipynb)
 3. [Prompt Engineering](./week-5/day2.ipynb)
@@ -12,3 +10,5 @@
 8. [LangChain Introduction: Prompt Template, LLMs, Chat Models and Output Parsers](./week-6/day2.ipynb)
 9. [LangChain Chains](./week-6/day3.ipynb)
 10. [LangChain Agents, Tools and Memory](./week-6/day4.ipynb)
+11. [Project 2 Reference](./week-6/src/)
+12. [AutoGen](./week-7/day1.ipynb)

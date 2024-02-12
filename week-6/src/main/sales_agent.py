@@ -8,12 +8,13 @@ from model import get_llm
 from tools.general_tool import get_general_tool
 
 
-
+# creating tools for sales agent
 def get_tools():
     tools = load_tools([], llm = get_llm('llama2'))
     tools.append(get_vectordb_tool())
     tools.append(get_general_tool())
     return tools
+
 
 def get_agent():
     model = get_chat_model('llama2')
