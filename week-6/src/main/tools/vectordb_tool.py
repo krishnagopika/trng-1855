@@ -11,10 +11,8 @@ vectordb = Pinecone(index=pinecone_index.get_index('trng-index'),embedding=get_e
 
 prompt = PromptTemplate.from_template(template="use this tool only for questions related to brightspeed sales")
 
-chain = LLMChain(
-    prompt=prompt,
-    llm = get_llm('openai')
-)
+
+
 
 def get_vectordb_tool():
 
@@ -22,7 +20,7 @@ def get_vectordb_tool():
         func= vectordb.similarity_search,
         name="BrightSpeed Sales Documents Vector DB Tools",
         description="Contains sales info related to Braoadband plans use this tool only when the questions are related to brightspeed sales",
-        retriever_top_k=3
+        retriever_top_k=5
     )
 
     return tool

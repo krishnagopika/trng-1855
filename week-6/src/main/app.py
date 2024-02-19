@@ -1,5 +1,6 @@
 import streamlit as st
-from sales_agent import get_agent
+from sales_agent import agent_execution
+from agent_chat_memory import get_memory
 
 # Title of the page
 st.title('BrightSpeed')
@@ -21,20 +22,19 @@ if user_input:
     "role": "user"
   })
   # calling the langchain sales agent
-  agent = get_agent()
+  agent = agent_execution
 
   # generating completeion for users prompt by invoking the agent
-  try:
-    agent_response = agent.invoke({user_input})
-    # adding ai agent response to the session state
-    st.session_state['chat'].append({
-      "content": agent_response['output'],
-      "role": "ai"})
-  except :
-    # handlinig any parsing errors
-    st.session_state['chat'].append({
-      "content": "Sorry, I'm not sure I can help with that.",
-      "role":"ai"})
+  agent_response = agent.invoke({'input':user_input})
+  # adding ai agent response to the session state
+  st.session_state['chat'].append({
+    "content": agent_response['output'],
+    "role": "ai"})
+  # except :
+  #   # handlinig any parsing errors
+  #   st.session_state['chat'].append({
+  #     "content": "Sorry, I'm not sure I can help with that.",
+  #     "role":"ai"})
 
 # rendering the messesges from chat
 if st.session_state['chat']:
