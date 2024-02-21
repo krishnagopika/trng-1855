@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /src
+
+COPY . .
+
+RUN pip3 install -r requirements.txt
+
+# Install spacy for Microsoft presideo
+RUN pip3 install -U spacy
+RUN python -m spacy download en_core_web_lg
+
+HEALTHCHECK CMD curl --fail http://localhost:80/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "main.py", "--server.port", "80"]
