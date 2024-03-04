@@ -12,3 +12,6 @@
 10. [LangChain Agents, Tools and Memory](./week-6/day4.ipynb)
 11. [Project 2 Reference](./week-6/src/)
 12. [AutoGen](./week-7/day1.ipynb)
+13. [Data Prep - Pandas and NLTK](week-7/day3.ipynb)
+14. [Vertex AI](./week-7/VertexAI.ipynb)
+15. [MLOps](week-7/MLOps.ipynb)
