@@ -15,3 +15,4 @@
 13. [Data Prep - Pandas and NLTK](week-7/day3.ipynb)
 14. [Vertex AI](./week-7/VertexAI.ipynb)
 15. [MLOps](week-7/MLOps.ipynb)
+16. [MLOps Kubeflow pipelines](week-7/kubeflow_pipelines.ipynb)
